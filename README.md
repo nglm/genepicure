@@ -1,6 +1,6 @@
-# Gene Regulatory Network-Driven Transcriptome-Wide Association Studies (GRN-TWAS)
+# GenEpicure: Gene Regulatory Network-Driven Transcriptome-Wide Association Studies (GRN-TWAS)
 
-This repository implements the GNR-TWAS method that integrates **tissue-specific gene regulatory networks (GRNs)** into **transcriptome-wide association studies (TWAS)** for studying gene-complex disease associations. You can find details of this framework in the pre-print article [*A Network-Driven Framework for Enhancing Gene-Disease Association Studies in Coronary Artery Disease* – Mohammad, Björkegren and Michoel, 2025](https://arxiv.org/pdf/2501.19030)[^GNR-TWAS].
+This repository implements the GNR-TWAS method that combines **tissue-specific gene regulatory networks (GRNs)** with **transcriptome-wide association studies (TWAS)** for studying gene-complex disease associations. You can find details of this framework in the pre-print article [*A Network-Driven Framework for Enhancing Gene-Disease Association Studies in Coronary Artery Disease* – Mohammad, Björkegren and Michoel, 2025](https://arxiv.org/pdf/2501.19030)[^GNR-TWAS].
 
 ## Key Features
 
@@ -12,9 +12,21 @@ This repository implements the GNR-TWAS method that integrates **tissue-specific
 2. **Gene expression modelling using both *cis* and *trans* eQTLs** and GNR topology as infered in step one by Findr. 2 "regular" Ridge regression models are trained, one for **cis** and one for **trans** eQTLS, and they are then combined additively.
 3. **Evaluates gene-disease associations** by combining **GWAS summary statistics** with expression model coefficients as detailed in [*A Network-Driven Framework for Enhancing Gene-Disease Association Studies in Coronary Artery Disease* – Mohammad, Björkegren and Michoel, 2025](https://arxiv.org/pdf/2501.19030)[^GNR-TWAS].
 
+## Installation
+
+<!-- TODO -->
+Coming soon.
+
+## Usage
+
+<!-- TODO -->
+
+Coming soon.
+
+
 ## Data Sources
 
-This project requires the following types of data:
+GenEpicure requires the following types of data:
 
 - Gene expression matrix
 - Genotype matrix
