@@ -9,8 +9,8 @@ This repository implements the GNR-TWAS method that combines **tissue-specific g
 | *Pipeline overview of the GRN-TWAS method as described in [*A Network-Driven Framework for Enhancing Gene-Disease Association Studies in Coronary Artery Disease* – Mohammad, Björkegren and Michoel, 2025](https://arxiv.org/pdf/2501.19030)* |
 
 1. **Infere causal gene-gene regulation using expression data and eQTL genotypes.** For GRN reconstruction from genotype and transcriptome data, GenEpicure uses [BioFindr](https://lab.michoel.info/BioFindr.jl/stable/), the Julia implementation of the [**Findr**](https://github.com/lingfeiwang/findr)[^FINDR] method.
-2. **Gene expression modelling using both *cis* and *trans* eQTLs** and GNR topology as infered in step one by Findr. 2 "regular" Ridge regression models are trained, one for **cis** and one for **trans** eQTLS, and they are then combined additively.
-3. **Evaluates gene-disease associations** by combining **GWAS summary statistics** with expression model coefficients as detailed in [*A Network-Driven Framework for Enhancing Gene-Disease Association Studies in Coronary Artery Disease* – Mohammad, Björkegren and Michoel, 2025](https://arxiv.org/pdf/2501.19030)[^GNR-TWAS]. The gene-disease association is evaluated based on the [S-PrediXcan](https://www.nature.com/articles/s41467-018-03621-1)[^PrediXcan] method and combines cis and trans models and based on .
+2. **Gene expression modelling using both *cis* and *trans* eQTLs** and GNR topology as infered in step one by Findr. 2 "regular" Ridge regression models are trained, one for **cis** and one for **trans** eQTLS, and they are then combined additively. Using a linear model to model gene expression is necessary as we then linearity properties to compute gene-disease associations in step 3.
+3. **Evaluates gene-disease associations** by combining **GWAS summary statistics** with expression model coefficients as detailed in [*A Network-Driven Framework for Enhancing Gene-Disease Association Studies in Coronary Artery Disease* – Mohammad, Björkegren and Michoel, 2025](https://arxiv.org/pdf/2501.19030)[^GNR-TWAS]. The gene-disease association is evaluated based on the [S-PrediXcan](https://www.nature.com/articles/s41467-018-03621-1)[^S-PrediXcan] method and combines cis and trans models.
 
 ## Installation
 
@@ -108,4 +108,4 @@ rs1006     0.003       0.01
 
 [^GNR-TWAS]: Mohammad GI, Björkegren JL, Michoel T. A Network-Driven Framework for Enhancing Gene-Disease Association Studies in Coronary Artery Disease. ArXiv [Preprint]. 2025 Jan 31:arXiv:2501.19030v1. PMID: 39975434; PMCID: PMC11838773.
 [^FINDR]: Wang L, Michoel T (2017) Efficient and accurate causal inference with hidden confounders from genome-transcriptome variation data. PLoS Comput Biol 13(8): e1005703. https://doi.org/10.1371/journal.pcbi.1005703
-[^PrediXcan]: Barbeira, A.N., Dickinson, S.P., Bonazzola, R. et al. Exploring the phenotypic consequences of tissue specific gene expression variation inferred from GWAS summary statistics. Nat Commun 9, 1825 (2018). https://doi.org/10.1038/s41467-018-03621-1
+[^S-PrediXcan]: Barbeira, A.N., Dickinson, S.P., Bonazzola, R. et al. Exploring the phenotypic consequences of tissue specific gene expression variation inferred from GWAS summary statistics. Nat Commun 9, 1825 (2018). https://doi.org/10.1038/s41467-018-03621-1
